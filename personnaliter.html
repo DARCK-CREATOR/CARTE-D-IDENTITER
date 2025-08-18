@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Your personnality ~</title>
+    <style>
+      body {
+        background-color: white;
+        text-align: center;
+        align-items: center;
+        font-family: Georgia,serif;
+      }
+    
+      .div-image{
+        background-color: #92cae8;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px #0c0f10;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        animation: imge 2s ease-in-out;
+      } 
+      @keyframes imge {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1.0);
+        }
+      }
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .main {
+        margin: 20px;
+        padding: 1rem;
+        background-color: #49ccf7;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.8);
+        border-radius: 20px 20px;
+        animation: perso 2.3s ease-in-out;
+  
+      }
+      @keyframes perso {
+        from {
+          opacity: 0;
+          transform: translateY(100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .h1{
+        color: blue;
+        font-size: 1.5rem;
+        text-shadow: 0 0 5px white,
+        0 0 10px cyan;
+      }
+      p {
+        text-align: left;
+        color: blue;
+        text-shadow: 
+                   0 0 5px #0e6bf0
+                   ;
+      }
+      h1 {
+        color: white;
+        text-shadow: 0 0 5px white,
+                     0 0 10px #0b7396;
+        
+      }
+      span {
+        color: white;
+        text-shadow: 0 0 5px white,
+                     0 0 7px white,
+                     0 0 9px white;
+      }
+       footer{
+        text-align: center;
+        color: #0584af;
+        font-size: 10px;
+        margin-top: 3rem;
+       }
+    </style>
+  </head>
+  <body>
+    <h1>Personnalité</h1>
+  <center>
+    <div class="div-image">
+      <img id="photo" class="img">
+    </div>
+  </center>
+         
+      <div class="main">
+        <h1 class="h1">Vos talents</h1>
+        <p>
+          <b>Nom :</b>
+          <span id="nom">
+            
+          </span>
+        </p>
+        <p>
+          <b>nationalité :</b>
+          <span id="continent" >
+          </span>
+        </p>
+        <p>
+          <b>couleur :</b>
+          <span id="couleur">
+          </span>
+          </p>
+        <p>
+        </b>
+          <b>Age : </b>
+          <span id="age">
+          </span>
+        </p>
+        <p>
+          <b>Force :</b>
+          <span id="force">
+         </span>
+        </p>
+        <p>
+          <b>Faiblesse :</b>
+          <span id="defaut">
+            
+          </span>
+          <p>
+            <b>Date de naissance : </b>
+            <span id="date">
+              
+            </span>
+          </p>
+        </p>
+        
+      </div>
+    <footer> 
+    &copy; 2025 made by darck-creator
+    </footer>
+    
+    <script>
+    
+/*Recuperation des données stockées */
+      let nom = localStorage.getItem("nom");
+      let age = localStorage.getItem("age");
+      let date = localStorage.getItem("date");
+      let couleur = localStorage.getItem("couleur");
+      let continent = localStorage.getItem("continent").toLowerCase();
+      let sexe = localStorage.getItem("sexe");
+      let photo = localStorage.getItem("image");
+    //fin de la recuperation
+      
+/*Recuperation des elements d'affichage*/
+      let nomElement = document.getElementById("nom");
+      let ageElement = document.getElementById("age");
+      let couleurElement = document.getElementById("couleur");
+      let forceElement = document.getElementById("force");
+      let defautElement = document.getElementById("defaut");
+      let photoElement = document.getElementById("photo");
+      let continentElement = document.getElementById("continent");
+      let dateElement = document.getElementById("date");
+      // fin de la Recuperation
+      
+      //affichage de l'image
+      photoElement.src = photo;
+      //fin 
+      
+    /* tableau pour les details des compliment */
+    let nomTableau = [
+  "[nom] rayonne comme une lumière d’espoir.",
+  "[nom] porte la force et le courage.",
+  "[nom] inspire confiance et respect.",
+  "[nom] est une mélodie qui donne de la motivation.",
+  "[nom] reflète une grandeur intérieure.",
+  "[nom] symbolise la persévérance et la réussite.",
+  "[nom] dégage une énergie qui pousse à avancer.",
+  "[nom] est porteur de succès et de belles choses à venir.",
+  "[nom] illumine le chemin de ceux qui l’entourent.",
+  "[nom] est une source d’inspiration pour tous.",
+  "[nom] transforme chaque défi en opportunité.",
+  "[nom] possède un esprit brillant et créatif.",
+  "[nom] élève les autres avec sa présence.",
+  "[nom] est une force tranquille et puissante.",
+  "[nom] fait briller ses rêves avec détermination.",
+  "[nom] inspire à toujours donner le meilleur de soi.",
+  "[nom] est la preuve que la persévérance paie.",
+  "[nom] a le courage de suivre son propre chemin.",
+  "[nom] transforme les obstacles en succès.",
+  "[nom] apporte de la joie et de l’énergie positive.",
+  "[nom] avance avec confiance et sagesse.",
+  "[nom] est unique et irremplaçable.",
+  "[nom] inspire le respect et l’admiration.",
+  "[nom] attire le succès et la chance.",
+  "[nom] est une source inépuisable de motivation.",
+  "[nom] garde toujours la tête haute face aux défis.",
+  "[nom] possède une force intérieure impressionnante.",
+  "[nom] rayonne de créativité et d’originalité.",
+  "[nom] est un exemple de détermination.",
+  "[nom] transforme chaque jour en opportunité de grandir."
+]
+    
+    let ageTableau = [
+  "[âge] est une étape pleine de découvertes et de possibilités.",
+  "[âge] est le moment idéal pour réaliser tes rêves.",
+  "[âge] te donne la force et l’énergie pour avancer.",
+  "[âge] est une chance de grandir et d’apprendre.",
+  "[âge] te rend unique et spécial.",
+  "[âge] est un tremplin vers de nouvelles aventures.",
+  "[âge] est parfait pour oser et se dépasser.",
+  "[âge] t’offre l’opportunité de briller.",
+  "[âge] est un chapitre rempli de belles surprises.",
+  "[âge] est synonyme de courage et de confiance.",
+  "[âge] est le moment de créer des souvenirs inoubliables.",
+  "[âge] est un atout pour vivre pleinement.",
+  "[âge] est le temps de cultiver la joie et le bonheur.",
+  "[âge] t’apporte sagesse et expérience.",
+  "[âge] est une invitation à réaliser tes ambitions.",
+  "[âge] est parfait pour découvrir tes talents cachés.",
+  "[âge] est rempli d’énergie et de potentiel.",
+  "[âge] te permet de dépasser toutes les limites.",
+  "[âge] est l’occasion de t’épanouir pleinement.",
+  "[âge] est le moment de croire en toi et en tes rêves.",
+  "[âge] t’inspire à avancer avec détermination.",
+  "[âge] est une force qui te guide vers le succès.",
+  "[âge] est un cadeau pour explorer de nouvelles opportunités.",
+  "[âge] est le moment idéal pour cultiver l’optimisme.",
+  "[âge] est rempli de potentiel et de belles expériences.",
+  "[âge] est une étape pour laisser briller ta créativité.",
+  "[âge] est une chance de transformer tes rêves en réalité.",
+  "[âge] est le moment de relever de nouveaux défis.",
+  "[âge] est une aventure pleine d’apprentissage et de joie.",
+  "[âge] est l’opportunité de créer un avenir exceptionnel."
+]
+    
+    let couleurTableau = [
+  "[couleur] apporte énergie et vitalité à ta journée.",
+  "[couleur] symbolise la force et la confiance en soi.",
+  "[couleur] illumine tout ce qui t’entoure.",
+  "[couleur] reflète ta créativité et ton originalité.",
+  "[couleur] te donne du courage pour avancer.",
+  "[couleur] inspire positivité et optimisme.",
+  "[couleur] t’accompagne dans chaque réussite.",
+  "[couleur] rayonne comme un éclat de lumière.",
+  "[couleur] apporte harmonie et équilibre à ta vie.",
+  "[couleur] est la couleur de ton potentiel.",
+  "[couleur] te guide vers tes objectifs avec clarté.",
+  "[couleur] t’inspire à toujours donner le meilleur de toi.",
+  "[couleur] reflète ta personnalité unique.",
+  "[couleur] te motive à relever tous les défis.",
+  "[couleur] est synonyme de joie et d’enthousiasme.",
+  "[couleur] illumine ton chemin vers le succès.",
+  "[couleur] t’encourage à croire en toi.",
+  "[couleur] est la couleur de la créativité et de l’audace.",
+  "[couleur] te pousse à avancer avec détermination.",
+  "[couleur] est un symbole de force intérieure.",
+  "[couleur] transforme chaque instant en opportunité.",
+  "[couleur] t’apporte inspiration et clarté.",
+  "[couleur] reflète la beauté et l’harmonie autour de toi.",
+  "[couleur] est le signe de ton énergie positive.",
+  "[couleur] guide tes pas vers des choix brillants.",
+  "[couleur] t’aide à rester concentré et motivé.",
+  "[couleur] est un symbole de courage et de succès.",
+  "[couleur] apporte équilibre et sérénité à ta vie.",
+  "[couleur] t’inspire à créer et innover chaque jour.",
+  "[couleur] est la couleur de ta confiance et de ton éclat."
+]
+    
+    let continentTableau = [
+  "[continent] est rempli de cultures et d’histoires inspirantes.",
+  "[continent] t’inspire à explorer de nouvelles possibilités.",
+  "[continent] regorge de beautés qui motivent à avancer.",
+  "[continent] est un terrain d’aventures et de découvertes.",
+  "[continent] t’encourage à croire en tes rêves.",
+  "[continent] symbolise la diversité et la richesse.",
+  "[continent] t’inspire à dépasser tes limites.",
+  "[continent] est une source d’inspiration pour chacun.",
+  "[continent] t’offre des opportunités uniques.",
+  "[continent] reflète la force et la résilience de ses habitants.",
+  "[continent] t’invite à grandir et à t’épanouir.",
+  "[continent] est un lieu de potentiel infini.",
+  "[continent] t’encourage à explorer et à apprendre.",
+  "[continent] symbolise l’unité et la coopération.",
+  "[continent] te motive à relever tous les défis.",
+  "[continent] rayonne par sa culture et son énergie.",
+  "[continent] est rempli de chances à saisir.",
+  "[continent] t’inspire à être audacieux et créatif.",
+  "[continent] est une source de force et de courage.",
+  "[continent] te guide vers de nouvelles réussites.",
+  "[continent] est un symbole d’opportunités infinies.",
+  "[continent] t’encourage à avancer avec confiance.",
+  "[continent] est riche en histoires et en leçons de vie.",
+  "[continent] t’inspire à réaliser tes ambitions.",
+  "[continent] est un lieu de beauté et de potentialité.",
+  "[continent] te motive à créer et à innover.",
+  "[continent] reflète la diversité et l’énergie positive.",
+  "[continent] est un symbole de force et de persévérance.",
+  "[continent] t’invite à grandir et à découvrir.",
+  "[continent] est rempli de lumière et de possibilités."
+]
+    
+    let forceTableau = [
+  "Tu es le genre de personne qui se sacrifie pour les autres.",
+  "Tu possèdes une détermination à toute épreuve.",
+  "Tu sais transformer les obstacles en opportunités.",
+  "Tu as une créativité qui inspire ceux qui t’entourent.",
+  "Tu es capable de rester positif même dans les moments difficiles.",
+  "Tu inspires confiance et respect par ta présence.",
+  "Tu as une force intérieure qui te permet de surmonter tout.",
+  "Tu sais motiver et encourager les autres naturellement.",
+  "Tu es doté(e) d’une grande intelligence émotionnelle.",
+  "Tu sais prendre des décisions avec sagesse et courage.",
+  "Tu es capable de relever les défis les plus complexes.",
+  "Tu possèdes un charisme qui attire les bonnes choses.",
+  "Tu sais garder ton calme et ta lucidité en toutes situations.",
+  "Tu as un esprit créatif et innovant.",
+  "Tu sais écouter et comprendre les autres profondément.",
+  "Tu es capable de transformer tes idées en actions concrètes.",
+  "Tu possèdes une grande persévérance dans tout ce que tu entreprends.",
+  "Tu sais inspirer et motiver ceux qui te suivent.",
+  "Tu as une personnalité qui rayonne et attire les bonnes énergies.",
+  "Tu es capable de surmonter toutes les difficultés avec courage.",
+  "Tu possèdes une sagesse qui guide tes choix.",
+  "Tu sais rester humble malgré tes succès.",
+  "Tu as un talent naturel pour aider et soutenir les autres.",
+  "Tu es capable de prendre des initiatives audacieuses.",
+  "Tu possèdes une force mentale impressionnante.",
+  "Tu sais garder la motivation même face aux échecs.",
+  "Tu es doté(e) d’une incroyable capacité d’adaptation.",
+  "Tu sais faire preuve de patience et de compréhension.",
+  "Tu possèdes une énergie qui inspire et dynamise les autres.",
+  "Tu es le genre de personne qui laisse une trace positive partout où elle passe.",
+  "Tu as le courage de poursuivre tes rêves sans jamais abandonner.",
+  "Tu sais reconnaître et valoriser les talents des autres.",
+  "Tu es capable de trouver des solutions là où les autres voient des problèmes.",
+  "Tu possèdes une confiance en toi qui fait rayonner ton entourage.",
+  "Tu es capable de surmonter les peurs et les doutes avec brio.",
+  "Tu as une capacité unique à apprendre rapidement et efficacement.",
+  "Tu inspires les autres par ton intégrité et ton honnêteté.",
+  "Tu sais équilibrer ambition et bienveillance.",
+  "Tu possèdes une force tranquille qui impressionne tout le monde.",
+  "Tu es capable de transformer les échecs en leçons précieuses.",
+  "Tu sais écouter ton intuition et agir avec justesse.",
+  "Tu possèdes une créativité qui ouvre de nouvelles perspectives.",
+  "Tu es capable de rester motivé malgré les obstacles.",
+  "Tu inspires le respect grâce à ta constance et ton engagement.",
+  "Tu as un talent naturel pour rassembler et unir les gens.",
+  "Tu sais faire preuve de courage même dans les situations difficiles.",
+  "Tu possèdes une énergie positive qui touche tous ceux qui t’entourent.",
+  "Tu es capable de faire la différence grâce à ton engagement.",
+  "Tu as une personnalité qui illumine les journées des autres.",
+  "Tu sais valoriser les petites victoires pour avancer toujours plus loin.",
+  "Tu possèdes un esprit ouvert qui accepte le changement avec facilité.",
+  "Tu es capable de créer des opportunités là où d’autres voient des limites."
+]
+    
+    let defautTableau  = [
+  "Ton défaut est de trop faire confiance, tu es comme une bougie, tu brilles pour illuminer les autres mais toi-même tu t’éteins.",
+  "Ton défaut est de vouloir tout contrôler, tu es comme le vent, fort et libre mais parfois tu soulèves des tempêtes autour de toi.",
+  "Ton défaut est de trop t’inquiéter, tu es comme la pluie, nécessaire pour les autres mais parfois tu te noies toi-même.",
+  "Ton défaut est de vouloir plaire à tout le monde, tu es comme le soleil, tu éclaires chacun mais parfois tu t’oublies.",
+  "Ton défaut est de douter de toi, tu es comme une étoile, brillante mais parfois cachée par les nuages.",
+  "Ton défaut est de trop donner, tu es comme une rivière, généreuse mais parfois à sec pour toi-même.",
+  "Ton défaut est de t’attacher trop vite, tu es comme un arbre, fort et accueillant mais parfois trop fragile.",
+  "Ton défaut est de repousser tes limites sans cesse, tu es comme le feu, puissant mais parfois brûlant toi-même.",
+  "Ton défaut est de te fier aux apparences, tu es comme un miroir, tu reflètes le monde mais parfois tu perds ta propre image.",
+  "Ton défaut est de trop réfléchir, tu es comme une horloge, précise mais parfois figée dans le temps.",
+  "Ton défaut est de garder tout pour toi, tu es comme un coffre, précieux mais parfois fermé aux autres.",
+  "Ton défaut est de trop sourire pour cacher ta tristesse, tu es comme une fleur, belle mais parfois fragile.",
+  "Ton défaut est de vouloir tout faire parfait, tu es comme un diamant, éclatant mais parfois sous pression.",
+  "Ton défaut est de te sacrifier pour les autres, tu es comme la lune, lumineuse mais parfois seule dans la nuit.",
+  "Ton défaut est de trop écouter les autres et pas toi-même, tu es comme une mélodie, douce mais parfois perdue dans le bruit.",
+  "Ton défaut est de trop espérer des autres, tu es comme une lanterne, tu guides mais tu attends parfois en vain.",
+  "Ton défaut est de t’oublier dans tes ambitions, tu es comme un phare, solide mais parfois consumé par la tempête.",
+  "Ton défaut est de te comparer aux autres, tu es comme un océan, immense mais parfois troublé par les vagues.",
+  "Ton défaut est de cacher tes émotions, tu es comme un ciel étoilé, beau mais parfois trop silencieux.",
+  "Ton défaut est de t’énerver facilement, tu es comme un volcan, puissant mais parfois en éruption sur toi-même.",
+  "Ton défaut est de vouloir être toujours aimé, tu es comme un papillon, léger mais parfois fragile dans le vent.",
+  "Ton défaut est de trop analyser, tu es comme un labyrinthe, complexe mais fascinant.",
+  "Ton défaut est de trop porter les problèmes des autres, tu es comme une montagne, solide mais parfois lourde.",
+  "Ton défaut est de repousser tes sentiments, tu es comme un jardin, plein de vie mais parfois en hiver.",
+  "Ton défaut est de tout prendre à cœur, tu es comme une plume, légère mais parfois trop sensible.",
+  "Ton défaut est de te disperser, tu es comme le vent, libre mais parfois perdu.",
+  "Ton défaut est de te sous-estimer, tu es comme un soleil, brillant mais parfois voilé.",
+  "Ton défaut est de t’inquiéter pour tout, tu es comme un phare dans la tempête, rassurant mais parfois fatigué.",
+  "Ton défaut est de trop sourire pour cacher tes blessures, tu es comme une rose, belle mais avec des épines.",
+  "Ton défaut est de ne pas dire ce que tu penses, tu es comme une rivière calme, profonde mais secrète.",
+  "Ton défaut est de te sacrifier pour la paix des autres, tu es comme une flamme, chaude mais parfois consumée.",
+  "Ton défaut est de trop te confier, tu es comme un livre ouvert, fascinant mais parfois vulnérable.",
+  "Ton défaut est de vouloir être parfait, tu es comme un ciel clair, lumineux mais parfois sans nuages pour t’abriter.",
+  "Ton défaut est de trop te comparer aux autres, tu es comme un arbre unique dans la forêt, magnifique mais parfois solitaire.",
+  "Ton défaut est de cacher ta fragilité, tu es comme un cristal, précieux mais sensible aux chocs.",
+  "Ton défaut est de trop rêver, tu es comme un oiseau, libre mais parfois loin du sol.",
+  "Ton défaut est de trop t’accrocher aux souvenirs, tu es comme un miroir ancien, beau mais parfois brisé.",
+  "Ton défaut est de vouloir aider tout le monde, tu es comme le soleil, généreux mais parfois épuisé.",
+  "Ton défaut est de t’oublier dans les choix des autres, tu es comme une étoile filante, lumineuse mais éphémère.",
+  "Ton défaut est de trop écouter les critiques, tu es comme un navire, solide mais parfois secoué par les vagues.",
+  "Ton défaut est de te faire passer en dernier, tu es comme un jardin secret, riche mais caché.",
+  "Ton défaut est de trop vouloir contrôler, tu es comme un ruisseau, puissant mais parfois débordé.",
+  "Ton défaut est de trop vouloir plaire, tu es comme un arc-en-ciel, beau mais parfois invisible à toi-même.",
+  "Ton défaut est de t’en faire trop pour les autres, tu es comme la lune, éclairant les nuits des autres mais parfois oubliée.",
+  "Ton défaut est de t’éparpiller, tu es comme le vent dans les champs, libre mais parfois dispersé.",
+  "Ton défaut est de cacher ta vulnérabilité, tu es comme une perle dans l’huître, précieuse mais protégée.",
+  "Ton défaut est de trop te sacrifier, tu es comme un flambeau, illuminant les autres mais consumé toi-même.",
+  "Ton défaut est de ne pas demander d’aide, tu es comme un arbre robuste mais parfois secoué par la tempête.",
+  "Ton défaut est de t’inquiéter pour tout le monde, tu es comme un phare, guidant mais parfois fatigué."
+]
+    let dateTableau = [ "Né(e) le [date], le jour où le monde a accueilli une lumière unique et destinée à illuminer les âmes autour de toi.",
+  "[date] : le moment où l’univers a décidé d’offrir au monde une âme pleine de force, de rêves et d’espoir.",
+  "Depuis [date], chaque jour résonne de la promesse quebody
