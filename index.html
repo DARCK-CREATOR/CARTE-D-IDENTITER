@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -7,14 +7,14 @@ content="width=device-width,initial-scale=1.0">
 <title> Carte d identité </title>
 <style>
 body {
-  background-color: #07051ef8;
+  background-color: rgb(227,229,235);
   text-align: center;
   font-family: Georgia, serif;
   border-radius: 18px 18px;
   border-color: gold;
   margin: 10px;
   padding: 10px;
-  box-shadow: 0 4px 8px #809;
+  box-shadow: 0 4px 8px white;
   animation: descend 3s ease-in-out;
   color: white;
 }
@@ -34,24 +34,18 @@ input {
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 8px 8px;
-  border: 1px solid #8fa26cf8;
+  border: 1px solid #bbeafa;
 }
 label {
   margin-bottom: 3em;
   font-size: 14px;
 }
-h1 {
-  font-size: 30px;
-  text-align: center;
-  font-family: Courier New, cursive;
-  letter-spacing: 1px;
-}
 .couleur {
   width: 60%;
   font-size: 14px;
   font-family: Courier New, cursive;
-  color: gold;
-  background-color: #07051ef8;
+  color: black;
+  background-color: transparent;
   text-align: center;
 }
 .file {
@@ -63,38 +57,37 @@ h1 {
   width: 60%;
   text-align: center;
   font-family: Courier New, cursive;
-  background-color: #07051ef8;
-  color: gold;
+  background-color: transparent;
+  color: black;
 }
 .age {
   width: 60%;
   font-family: Courier New, cursive;
-  color: gold;
-  background-color:  #07051ef8;
+  color: black;
+  background-color:  transparent;
   text-align: center;
 }
 label {
- color: blue;
+ color: black;
  
 }
 .date {
   font-family: Courier New, cursive;
   width: 60%;
-  background-color: #07051ef8;
-  color: gold;
+  background-color: transparent;
+  color: black;
 }
 .sexe {
   font-family: Courier New, cursive;
   font-size: 20px;
-  color: gold;
-  
+  color: cyan;
 }
 .select {
-  background-color: #07051ef8;
+  background-color: transparent;
   width: 65%;
   font-family: Courier New, cursive;
-  border-color:  #8fa26cf8;
-  color: #3fe138;
+  border-color:  cyan;
+  color: black;
   margin-bottom: 1em;
   text-align: center;
   padding: 5px;
@@ -103,7 +96,7 @@ label {
 .div {
   width: 150px;
   height: 150px;
-  border: 1px dashed #b0ee39f8;
+  border: 2px dashed cyan;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -111,9 +104,9 @@ label {
   overflow : hidden;
   position: relative;
   margin-bottom: 2em;
-  box-shadow: 0 8px 20px blue;
+  box-shadow: 0 8px 20px black;
   animation: div1 4s  ease-in-out;
-  background-color: ;
+  background-color: transparent;
 }
 img {
   width: 100%;
@@ -143,10 +136,10 @@ button {
   margin-bottom: 1em;
   padding: 8px;
   width: 80%;
-  background-color: #0b0831f8;
-  border: 1px solid #813ddab1;
+  background-color: #e1e2e5;
+  border: 1px solid #b1bcda;
   border-radius: 18px 18px;
-  color:gold;
+  color: black;
   font-size: 16px;
   font-family: Georgia, serif;
   box-shadow: 0 8px 18px rgba(0,0,0,0.8);
@@ -168,30 +161,33 @@ button:active {
   background-color: blue;
 }
 .div2 {
-  box-shadow: 0 8px 12px blue;
-  background-color: #07051ef8;
+  box-shadow: 0 8px 12px rgb(70,88,141);
+  background-color: #f0f0f0;
   margin-bottom: 1em;
   padding: 10px;
   border-radius: 18px 18px;
   text-align: left;
   animation: div2 2s ease-in-out;
+  border:1.5px solid cyan;
 }
 .div3 {
-  box-shadow: 0 8px 12px blue;
-  background-color:  #07051ef8;
+  box-shadow: 0 8px 12px rgb(70,88,141);
+  background-color:  #f0f0f0;
   text-align: left;
   padding: 10px;
   border-radius: 18px;
   margin-bottom: 1em;
   animation: continent 4s ease-in-out;
+  border: 1.5px solid  cyan;
 }
 .div4 {
-    background-color: #07051ef8;
-  box-shadow: 0 8px 12px blue;
+    background-color: #f0f0f0;
+  box-shadow: 0 8px 12px rgb(70,88,141);
 border-radius: 18px 18px;
 margin-bottom: 1em;
 text-align: left;
 padding: 8px;
+border: 1.5px solid cyan;
 animation: div4 6s ease-in-out;
 }
 h1 {
@@ -200,15 +196,14 @@ h1 {
   font-family: Courier New, cursive;
   background-image: linear-gradient(90deg, blue, #56b452);
   color: transparent;
-  -webkit-background-clip: text; /* nécessaire pour Chrome/Safari */
-  background-clip: text; /* pour Firefox */
+  -webkit-background-clip: text; 
+  background-clip: text; 
   animation: texte 3s linear infinite;
 }
 @keyframes texte {
   0% { background-position: 0; }
   100% { background-position: 500px; }
 }
- 
 @keyframes  div1{
   from {
     opacity: 0;
@@ -256,7 +251,7 @@ h1 {
 <h1>PERSONNALITÉ</h1>
 <center> <div class="div">
 <img id="img">
-<label class="label-image-input">
+<label id="label-photo"class="label-image-input">
 photo <input type="file" id="file" accept="image/*" style="display: none;"> </label>
 </div>
 </center>
@@ -356,10 +351,11 @@ function connexion() {
    let age = document.getElementById("age").value;
    let couleur = document.getElementById("couleur").value;
    let date = document.getElementById("date").value;
+   let labelPhoto = document.getElementById("label-photo");
    let continent = list.value;
    let choixSexe = sexe;
    
-   
+   //enregistrement des données 
    localStorage.setItem("date", date);
    localStorage.setItem("sexe", sexe);
    localStorage.setItem("nom", nom);
@@ -374,9 +370,14 @@ function connexion() {
        }
        else if (date === "" && age === "") {
     alert("Date non valide !")
-        } else {
+        } else if(!input.files || input.files.length === 0) {
+          alert("Veullez ajouter une photo !")
+          
+        } 
+          else {
          alert("FELICITATIONS IDENTIFICATIONS TERMINÉE");
-         window.location.href= "Carte.html"
+         window.location.href= "personnaliter.html"
+        
          }
 
   }
@@ -387,4 +388,4 @@ function connexion() {
   });
 </script>
     </body>
-  </html>
+ </html>
