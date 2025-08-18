@@ -411,4 +411,131 @@
 ]
     let dateTableau = [ "Né(e) le [date], le jour où le monde a accueilli une lumière unique et destinée à illuminer les âmes autour de toi.",
   "[date] : le moment où l’univers a décidé d’offrir au monde une âme pleine de force, de rêves et d’espoir.",
-  "Depuis [date], chaque jour résonne de la promesse quebody
+  "Depuis [date], chaque jour résonne de la promesse que de belles choses naissent là où tu poses tes pas.",
+  "Né(e) le [date], le jour où les étoiles ont souri et où un nouveau chapitre de merveilles a commencé.",
+  "[date] : le début d’une histoire extraordinaire, où chaque souffle porte la puissance de créer et d’inspirer.",
+  "Le [date] a marqué l’arrivée d’une présence capable de transformer les instants ordinaires en moments inoubliables.",
+  "Depuis [date], le monde a gagné une étincelle qui éclaire même les chemins les plus sombres.",
+  "Né(e) le [date], le jour où le destin a choisi de semer courage, lumière et inspiration dans le cœur des autres.",
+  "[date] : l’instant où le temps lui-même a semblé retenir son souffle, annonçant l’arrivée de grandes choses.",
+  "Depuis [date], chaque instant témoigne de la beauté et de la force qui émanent de toi, prêt(e) à marquer l’histoire.",
+  "Le [date] a été le premier jour où le monde a compris que des miracles peuvent naître à chaque souffle.",
+  "Né(e) le [date], lorsque l’univers a décidé de déposer un trésor d’énergie et de lumière dans ce monde.",
+  "[date] : le jour où le destin a commencé à tisser une histoire pleine de rêves et d’audace.",
+  "Depuis [date], la vie a trouvé un souffle nouveau, capable d’inspirer et d’élever tout autour de toi.",
+  "Né(e) le [date], le moment où chaque étoile a semblé briller un peu plus fort pour célébrer ton arrivée.",
+  "[date] : l’instant où le monde a accueilli une force qui ne cesse de croître et de créer des merveilles.",
+  "Le [date] a marqué le début d’une aventure où chaque pas révèle la beauté et la puissance de ton âme.",
+  "Depuis [date], le monde a été enrichi par une présence capable de transformer l’ordinaire en extraordinaire.",
+  "Né(e) le [date], lorsque la lumière a trouvé un véhicule pour toucher les cœurs et inspirer les esprits.",
+  "[date] : le jour où le vent a semblé murmurer que des choses merveilleuses allaient naître.",
+  "Depuis [date], chaque instant est une preuve que la vie elle-même attend ton éclat pour briller.",
+  "Né(e) le [date], le jour où le destin a choisi d’offrir au monde un souffle de courage et de grandeur.",
+  "[date] : le moment où l’univers a décidé que l’espoir prendrait forme à travers toi.",
+  "Le [date] a été le premier chapitre d’une histoire qui inspire et touche tous ceux qui croisent ton chemin.",
+  "Depuis [date], la vie danse au rythme d’une énergie rare et d’un éclat inoubliable.",
+  "Né(e) le [date], lorsque le ciel a souri et que la terre a senti naître une force capable de changer les choses.",
+  "[date] : le jour où la lumière s’est incarnée pour illuminer les âmes et réveiller les rêves.",
+  "Depuis [date], chaque instant respire l’intensité et la magie d’une présence unique et précieuse.",
+  "Né(e) le [date], le moment où le monde a compris que la grandeur peut prendre forme humaine.",
+  "[date] : l’instant où le destin a mis en marche une énergie capable de transformer l’ordinaire en merveilleux.",
+  "Le [date] a marqué le début d’un voyage où l’inspiration et la force se rencontrent à chaque pas.",
+  "Depuis [date], le monde a été témoin de l’arrivée d’une âme capable de semer lumière et joie.",
+  "Né(e) le [date], le jour où les étoiles ont semblé s’aligner pour célébrer une existence exceptionnelle.",
+  "[date] : le moment où le souffle de la vie a rencontré la force d’un esprit prêt à tout accomplir.",
+  "Depuis [date], chaque jour raconte l’histoire d’un être qui transforme le simple en extraordinaire.",
+  "Le [date] a été le début d’un chemin où la lumière, le courage et la créativité se sont rencontrés en toi.",
+  "Né(e) le [date], lorsque le monde a reçu un souffle d’énergie capable de changer des vies.",
+  "[date] : le jour où l’univers a murmuré que des merveilles allaient naître et grandir.",
+  "Depuis [date], chaque instant respire la puissance et l’audace d’une âme qui ne connaît pas de limites.",
+  "Né(e) le [date], le jour où les étoiles ont décidé de briller un peu plus fort pour toi.",
+  "[date] : le moment où le destin a choisi de déposer un trésor de lumière et de force dans ce monde.",
+  "Depuis [date], le monde est devenu un lieu où chaque pas peut devenir une inspiration.",
+  "Le [date] a marqué le début d’une aventure où la beauté, le courage et l’espoir se rencontrent chaque jour.",
+  "Né(e) le [date], lorsque le temps a semblé s’arrêter pour célébrer l’arrivée d’une présence rare.",
+  "[date] : le jour où la vie a décidé de tisser un récit de grandeur et d’inspiration.",
+  "Depuis [date], chaque souffle raconte la force, la lumière et l’originalité qui habitent ton être.",
+  "Né(e) le [date], le moment où l’univers a choisi de créer un être capable de transformer l’ordinaire en merveilleux.",
+  "[date] : l’instant où le destin a mis en marche une énergie lumineuse et inépuisable.",
+  "Depuis [date], le monde a été témoin de l’arrivée d’une âme capable de briller et d’inspirer.",
+  "Le [date] a marqué le début d’un chemin où l’audace et la magie se rencontrent à chaque pas.",
+  "Né(e) le [date], lorsque les étoiles ont conspiré pour offrir au monde un souffle de lumière et de courage.",
+  "[date] : le jour où la vie elle-même a décidé de célébrer la puissance de ton existence."
+];
+    
+    
+    /* selection aleatoire de reponse complimentatives */
+    let nomAlea = Math.floor(Math.random()* nomTableau.length)
+    let ageAlea = Math.floor(Math.random()* ageTableau.length)
+    let couleurAlea = Math.floor(Math.random()* couleurTableau.length)
+    let continentAlea = Math.floor(Math.random()* continentTableau.length )
+    let forceAlea = Math.floor(Math.random()* forceTableau.length)
+    let defautAlea = Math.floor(Math.random()* defautTableau.length)
+    let dateAlea = Math.floor(Math.random()* dateTableau.length);
+    /*renvoyer les messages et pas l'index donc choisir un message d'envoir */
+    let noms = nomTableau[nomAlea];
+    
+    let couleurs = couleurTableau[couleurAlea];
+    
+    let ages = ageTableau[ageAlea];
+    
+    let continents = continentTableau[continentAlea];
+    
+    let forces = forceTableau[forceAlea];
+    
+    let defauts = defautTableau[defautAlea];
+    let dates = dateTableau[dateAlea];
+   /* remplacer les fausses valeurs par les variables */
+   
+    noms = noms.replace("[nom]",nom);
+    ages = ages.replace("[âge]",age);
+    couleurs = couleurs.replace("[couleur]",couleur);
+    continents = continents.replace("[continent]",continent);
+    //fin 
+    dates = dates.replace("[date]",date)
+    /* maintenant afficher les resultat ahhh les codes est trop longs */
+    let a = 0;
+    let b = 0;
+    let c = 0;
+    let d = 0;
+    let e = 0;
+    let f = 0;
+    let g = 0;
+    function afficher() {
+      if(a < noms.length) {
+        nomElement.textContent += noms[a];
+        a++ 
+        setTimeout(afficher, 100)
+      } else if (b < continents.length) {
+        continentElement.textContent += continents[b];
+        b++;
+        setTimeout(afficher, 100)
+        
+      } else if(c < couleurs.length) {
+        couleurElement.textContent += couleurs[c];
+        c++
+        setTimeout(afficher, 100)
+        
+      } else if(d < ages.length) {
+        ageElement.textContent += ages[d];
+        d++
+        setTimeout(afficher, 100);
+      } else if(e < forces.length) {
+        forceElement.textContent += forces[e];
+        e++
+        setTimeout(afficher, 100)
+        
+      } else if(f < defauts.length) {
+        defautElement.textContent += defauts[f];
+        f++;
+        setTimeout(afficher,100)
+      } else if(g < dates.length) {
+        dateElement.textContent += dates[g];
+        g++;
+        setTimeout(afficher,100);
+      }
+    }
+  setTimeout(afficher, 3000)
+    </script>
+  </body>
+</html>
